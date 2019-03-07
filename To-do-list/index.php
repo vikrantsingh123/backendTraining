@@ -1,17 +1,22 @@
 <?php
+// Start the session
 session_start();
-$a=$_GET["task1"];
+?>
+<html>
+   <body>
+       <h1>Add Your Tasks</h1>
+       <form name="myForm" action="add-item.php" method="GET">
+    
+Task:    <input type="text" name="task1" required>
 
-if( $a ) {
-    if(empty($_SESSION[list1])) 
-    
-        $_SESSION[list1]=array();
-        array_push($_SESSION[list1],$a);
-    
+<input type="submit">
+</form>
+
+<?php
     foreach( $_SESSION[list1] as $value ) {
         echo "$value <br />";
      }
-      exit();
-   
-}
    ?>
+</body>
+</html>
+
