@@ -1,0 +1,20 @@
+<?php
+    $i=0;
+    // echo '<form action="edit-delete.php"POST">';
+    echo '<ul class="container-fulid">';
+    foreach( $_SESSION[list1] as $value )
+    {
+        echo "    $value ";
+        $x=$i;?>
+         <!-- echo '<button class="m-3 btn btn-info" id="'.$i.'">Edit</button>';
+             echo '<button class="m-3 btn btn-info id="'.$i.'">Delete</button></li>'; -->
+
+            <a href='edit-delete.php?id="'.$i."'
+            class="m-3 btn btn-info" >Delete</button></li>';
+
+            echo '<br />';
+            $i=$i+1;
+     }
+     echo '</ul>';
+    // echo '</form>';
+   ?> 
