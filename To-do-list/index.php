@@ -26,7 +26,7 @@ Task:    <input type="text" name="task1" required>
 <tr>
     <th>Tak</th>
     <th>Delete</th>
-    <!-- <th>Edit</th> -->
+    <th>Edit</th>
 </tr>
 </thead>
 <tbody>
@@ -35,8 +35,15 @@ Task:    <input type="text" name="task1" required>
 
 
      <td><?php echo $value;?></td> 
-    <!-- <td><a href='edit-delete.php?id="<?php echo urlencode($value) ?>"' role="button" class="btn">Delete</a></td> -->
-    <td><a href='edit-delete.php?id=<?php echo $value ?>' role="button" class="btn">Delete</a></td>
+    <td><a href='delete.php?id=<?php echo $value ?>' role="button" class="btn">Delete</a></td>
+    <td>
+    <form name="myForm2" method="POST" action="edit.php" >
+    
+    Task:    <input type="text" name="tasknew" required>
+    <input type="hidden" name="number" value='<?php echo $value ?>' />
+    <input type="submit">
+    </form>
+    </td>
 
 </tr>
 <?php endforeach;?>
@@ -44,4 +51,3 @@ Task:    <input type="text" name="task1" required>
 </table>
 </body>
 </html>
-
