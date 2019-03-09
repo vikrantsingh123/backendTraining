@@ -1,0 +1,32 @@
+<html>
+    <head>
+</head>
+<body>
+<?php
+function db(){
+
+    $link=mysqli_connect("127.0.0.1","root","goldtree9","todo");
+    Echo mysqli_connect_error();
+    return $link;    
+}
+if(db())
+{
+    echo "success yes i did it";
+}
+else
+{
+    echo "failed";
+}
+
+// function db(){
+//     global $link;
+//     $link = mysqli_connect(“localhost”, “root”, "", “todo”);
+    
+//     return $link;
+// }
+// if(db()){
+//     echo 'wawu  I am connected';
+// }
+?>
+</body>
+</html>
