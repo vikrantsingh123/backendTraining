@@ -2,7 +2,7 @@
 require_once("database.php"); 
  
      $link=db();
-     if($isChecked==true)$x=1;
+     //if($isChecked==true)$x=1;
      $query = "truncate tasks";
      
      $deleteTodo = mysqli_query($link, $query);
@@ -12,5 +12,5 @@ require_once("database.php");
              echo mysqli_error($link);
      }
      mysqli_close($link);
-     
+     //header("location:index.php");
 ?>

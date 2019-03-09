@@ -5,14 +5,15 @@ if(isset($_GET['id'])) {
  //db();
 //  global $link;
 $link=db();
- $query = "SELECT * FROM todo WHERE id = '$id'";
+ $query = "SELECT * FROM tasks WHERE id = '$id'";
  $result = mysqli_query($link, $query);
  if(mysqli_num_rows($result)==1){
  $row = mysqli_fetch_array($result);
  if($row){
- $title = $row['todoTitle'];
+ $title = $row['capation'];
  $is_completed = $row['is_completed'];
- $date = $row['date'];
+
+//  $date = $row['date'];
 echo "
  <h2>$title</h2>
  <h3>completed</h3>

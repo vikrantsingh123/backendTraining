@@ -1,7 +1,3 @@
-<html>
-    <head>
-</head>
-<body>
 <?php
 function db(){
 
@@ -11,7 +7,7 @@ function db(){
 }
 if(db())
 {
-    echo "success database connected";
+    //echo "success database connected";
 }
 else
 {
@@ -19,5 +15,3 @@ else
 }
 
 ?>
-</body>
-</html>
