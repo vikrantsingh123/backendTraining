@@ -11,22 +11,13 @@ function db(){
 }
 if(db())
 {
-    echo "success yes i did it";
+    echo "success database connected";
 }
 else
 {
     echo "failed";
 }
 
-// function db(){
-//     global $link;
-//     $link = mysqli_connect(“localhost”, “root”, "", “todo”);
-    
-//     return $link;
-// }
-// if(db()){
-//     echo 'wawu  I am connected';
-// }
 ?>
 </body>
 </html>
