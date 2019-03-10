@@ -3,12 +3,14 @@ require_once("database.php"); ?>
 <html>
 <head>
 <head>
-    <meta charset="utf-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <script src="java_script.js"></script>
     </head>
 </head>
 <style>
@@ -52,17 +54,19 @@ if(mysqli_num_rows($result) >= 1){
  if($is_completed==1)$show_completed='completed';
 //   $date = $row[‘date’];
 ?>
-
 <tr>
  <td><?php echo $title?></td>
  
  <td><?php echo  $show_completed;?>
- <input type="checkbox" name="isChecked" value="<?php echo $is_completed; ?>" >
+ <form method="get" action="checkbox_check.php">
+ <input type="checkbox" name="isChecked" id="<?php echo $id?>" 
+ onclick="check(<?php echo $id?>)" <?php if($is_completed==1) echo 'checked="checked"';?>>
+ <input type="hidden" name="completed">
+ </form>
  </td>
  <td><a href="delete.php?id=<?php echo $id; ?>">Delete</a>
  <td><a href="edit.php?id=<?php echo $id; ?>">Edit</a>
  </tr>
-
 <?php
  }
 }

@@ -7,10 +7,10 @@ require_once("database.php");
      
      $deleteTodo = mysqli_query($link, $query);
      if($deleteTodo){
-             echo "Deleted successfully";
+            // echo "Deleted successfully";
      }else{
              echo mysqli_error($link);
      }
      mysqli_close($link);
-     //header("location:index.php");
+     header("location:index.php");
 ?>
