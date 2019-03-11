@@ -55,7 +55,7 @@ if(mysqli_num_rows($result) >= 1){
 //   $date = $row[‘date’];
 ?>
 <tr>
- <td><?php echo $title?></td>
+ <td <?if($is_completed==1) echo 'style="text-decoration:line-through;color:grey; font-style: italic" ';?> ><?php echo $title;  ?></td>
  
  <td><?php echo  $show_completed;?>
  <form method="get" action="checkbox_check.php">
