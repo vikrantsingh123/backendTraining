@@ -1,0 +1,50 @@
+.checkbox-round {
+    width: 1.3em;
+    height: 1.3em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+}
+ 
+.checkbox-round:checked {
+    background-color:#85d7cc;
+    color:#ffffff;
+} 
+
+  input[type=text]:focus, textarea:focus{
+    background-color : #fefefe;
+    box-shadow: none;
+    border: none;
+    
+    outline: none!important;
+    /* border:none; */
+  }
+  textarea:focus, input:focus{
+    outline: none;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #ebebeb;
+    font-style:italic;
+    font-weight: lighter;
+    font-family: Open+Sans;
+    font-size:1.5rem;
+    background-color:#fefefe;
+  }
+  [contenteditable]:focus {
+    outline: 1px solid black;
+}
+.p_style{
+  word-wrap:break-word;
+  display: inline-block;
+  width:100%;
+}
+.button_class{
+  display:none;
+  
+}

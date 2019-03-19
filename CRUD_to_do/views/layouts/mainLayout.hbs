@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <srcipt src="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css"></srcipt>
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel="stylesheet">   
+</head> 
+    <body style="background-color: #f5f5f5">
+<div class="container " style="padding-left:100px;padding-right:100px;">
+        <div class="h11 text-center" style="font-family:Open Sans;color:#e7d3d5;font-size:6.5rem;font-weight: lighter">todos</div>
+            <div class="form-group shadow-lg  bg-white rounded" style="margin-bottom: 0%">
+            <form method="POST" action="/todos">
+            <input autocomplete="off" name="caption" style="font-family:Open Sans;font-size:1.2rem;height:65px;color:#727272;background-color:#fefefe;font-weight: lighter" class="form-control" type="text" id="text_add" placeholder="What needs to be done?" required>
+            </form>
+        </div>
+        <div class="shadow-lg  mb-5 bg-white rounded">
+        <ul class="list-group" id="task-container">
+            {{#each list}}
+        <li {{#if this.iscompleted}}style="font-size:1.2rem;font-family:Open Sans;font-weight:lighter;text-decoration:line-through;color:grey"{{/if}} 
+        class="round list-group-item d-flex" style="font-size:1.2rem;font-family:Open Sans;font-weight:lighter" >
+            <input type="checkbox" class="checkbox-round m-1" {{#if this.iscompleted}} checked{{/if}}>
+            <input type="hidden" name="_id" value="{{this._id}}">
+            <p class="p_style">{{this.caption}}</p>
+            <button  class="btn ml-auto" style="visibility:hidden">
+             <a href="/todos/delete/{{this._id}}" ><i style='color:#e7d3d5' class='fas fa-times'></i></a>
+            </button>
+           
+        </li>
+        {{/each}}
+        </ul>
+        </div>
+</div>
+</body>
+<script src="../app.js"></script>
+<script src="../handlebars.js"></script>
+</html>        
